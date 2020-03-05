@@ -1,4 +1,4 @@
-(ns ~{projectName}.components.webserver
+(ns rcd.components.webserver
   (:require
    [aleph.http.server :as web]
    [castra.middleware :as castra]

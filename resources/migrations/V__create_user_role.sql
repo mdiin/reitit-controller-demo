@@ -1,1 +1,1 @@
-create role ~{projectName}_user;
+create role rcd_user;

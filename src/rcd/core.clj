@@ -1,6 +1,6 @@
-(ns ~{projectName}.core
+(ns rcd.core
   (:require
-   [~{projectName}.system :as s]))
+   [rcd.system :as s]))
 
 (defn -main [& args]
   (println "Doint the API play")

@@ -1,4 +1,4 @@
-(ns ~{projectName}.test-fixtures
+(ns rcd.test-fixtures
   (:require
    [clojure.test :refer :all]
    [etaoin.api :refer :all]))

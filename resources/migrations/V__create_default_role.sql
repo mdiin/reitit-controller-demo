@@ -1,1 +1,1 @@
-create role ~{projectName}_anonymous;
+create role rcd_anonymous;

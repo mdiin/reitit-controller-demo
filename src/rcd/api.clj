@@ -1,4 +1,4 @@
-(ns ~{projectName}.api
+(ns rcd.api
   (:require
    [next.jdbc :as jdbc]
    [castra.core :as castra :refer [defrpc]]))

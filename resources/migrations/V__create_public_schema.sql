@@ -5,5 +5,5 @@
 }}
 */
 -- This is where exposed data lives.
-create schema ~{projectName}_public;
-grant usage on schema ~{projectName}_public to ~{projectName}_anonymous, ~{projectName}_user;
+create schema rcd_public;
+grant usage on schema rcd_public to rcd_anonymous, rcd_user;

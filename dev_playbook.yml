@@ -43,34 +43,34 @@
       service:
         name: postgresql
         state: restarted
-    - name: Add ~{projectDB} super user
+    - name: Add rcd super user
       postgresql_user:
-        name: ~{projectDBSuperUser}
-        password: ~{projectDBSuperUserPassword}
+        name: rcd
+        password: rcd
         encrypted: yes
         expires: infinity
         role_attr_flags: SUPERUSER
-    - name: Add ~{projectName} database user
+    - name: Add rcd database user
       postgresql_user:
-        name: ~{projectDBUser}
-        password: ~{projectDBUserPassword}
+        name: rcd
+        password: rcd
         encrypted: yes
         expires: infinity
         role_attr_flags: SUPERUSER
     - name: Add migrations database user
       postgresql_user:
-        name: ~{projectDBMigrationUser}
-        password: ~{projectDBMigrationUserPassword}
+        name: rcd-mig
+        password: rcd-mig
         encrypted: yes
         expires: infinity
         role_attr_flags: SUPERUSER
     - name: Create database
       postgresql_db:
-        name: ~{projectDB}
+        name: rcd
         encoding: UTF-8
-        owner: ~{projectDBSuperUser}
+        owner: rcd
         template: template0
     - name: Add uuid extension
       postgresql_ext:
-        db: ~{projectDB}
+        db: rcd
         name: pgcrypto

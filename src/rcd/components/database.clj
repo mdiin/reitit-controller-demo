@@ -1,4 +1,4 @@
-(ns ~{projectName}.components.database
+(ns rcd.components.database
   (:require
    [com.stuartsierra.component :as component]
    [next.jdbc :as jdbc]
@@ -14,7 +14,7 @@
    :maxLifetime 1800000
    :minimumIdle 10
    :maximumPoolSize 10
-   :poolName "~{projectName}-pool"})
+   :poolName "rcd-pool"})
 
 (defrecord Database [db-spec ^HikariDataSource datasource]
   component/Lifecycle

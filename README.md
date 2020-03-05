@@ -1,4 +1,4 @@
-# ~{projectName} #
+# rcd #
 
 Template variables to `sed`ify:
 
@@ -18,7 +18,7 @@ All are enclosed in `~{}` for easy `sed`ing.
 Run:
 
 ```bash
-clj -A:dev:test:shadow-cljs ~{projectName}
+clj -A:dev:test:shadow-cljs rcd
 ```
 
 This starts up shadow-cljs with a socket REPL, to which you can connect your editor.
@@ -26,7 +26,7 @@ This starts up shadow-cljs with a socket REPL, to which you can connect your edi
 ### Atom with Chlorine:
 
 1. Connect a Clojure Socket REPL in Atom
-2. Start the system from the `~{projectName}.system` namespace
+2. Start the system from the `rcd.system` namespace
 3. Open the webserver URL in a browser
 4. Connect an Embedded REPL in Atom
 

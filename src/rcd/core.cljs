@@ -1,7 +1,7 @@
-(ns ~{projectName}.core
+(ns rcd.core
   (:refer-clojure :exclude [group-by dosync])
   (:require
-   [~{projectName}.api :as api]
+   [rcd.api :as api]
 
    [hoplon.core :as h :include-macros true]
    [hoplon.jquery]
@@ -96,7 +96,10 @@
 (h/defelem app
   []
   (h/main
-   (h/h1 "~{projectName}")))
+   (h/h1 "rcd")
+   (h/a
+    :href (rfe/href :route/abc)
+    "ABC")))
 
 (declare router)
 
@@ -113,15 +116,23 @@
                                   (println (str "Entering " identity)))
                          :stop (fn welcome-controller-stop
                                  [identity]
-                                 (println (str "Leaving " identity)))}]}]]))
+                                 (println (str "Leaving " identity)))}]}]
+    ["/abc" {:name :route/abc
+             :domain {:domain/name :abc
+                      :domain/level 0}
+             :controllers [{:identity #(get-in % [:data :domain :domain/name])
+                            :start (fn welcome-controller-start
+                                     [identity]
+                                     (println (str "Entering " identity)))
+                            :stop (fn welcome-controller-stop
+                                    [identity]
+                                    (println (str "Leaving " identity)))}]}]]))
 
 ;; Initialisation
 
 (defn on-navigate
   [new-match]
   (when new-match
-    (reset! previous-route @current-route)
-    (js/setTimeout #(reset! previous-route nil) 300)
     (swap! current-route
            (fn [old new]
              (let [controllers (rfc/apply-controllers (:controllers old) new)]

@@ -1,7 +1,7 @@
-(ns ~{projectName}.system
+(ns rcd.system
   (:require
-   [~{projectName}.components.database :as db]
-   [~{projectName}.components.webserver :as web]
+   [rcd.components.database :as db]
+   [rcd.components.webserver :as web]
    [com.stuartsierra.component :as component]))
 
 
@@ -32,10 +32,10 @@
   (start))
 
 (comment
-  (init (system {:db {:username "~{projectDBUser}"
-                      :password "~{projectDBUserPassword}"
+  (init (system {:db {:username "rcd"
+                      :password "rcd"
                       :dbtype "postgresql"
-                      :dbname "~{projectDB}"
+                      :dbname "rcd"
                       :webserver {}}}))
   (start)
   (stop)
